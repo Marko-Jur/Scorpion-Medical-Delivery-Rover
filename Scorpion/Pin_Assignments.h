@@ -10,7 +10,7 @@
 
 #define MOTOR_LEFT_A
 #define MOTOR_LEFT_B
-#define MOTOR_ELEFT_ENABLE
+#define MOTOR_LEFT_ENABLE
 
 //Actuators
 #define LINEAR_ACTUATOR
