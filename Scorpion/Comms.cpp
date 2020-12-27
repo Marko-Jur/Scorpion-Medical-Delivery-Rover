@@ -3,6 +3,8 @@
 #include "Pin_Assignments.h"
 #include "Scorpion_Libraries.h"
 
+int rc_values[8] = {0,0,0,0,0,0,0,0};
+
 //Add in Function Description Here
 void setupRc(){
   //Setup RC pins here
