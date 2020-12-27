@@ -21,7 +21,8 @@ void setup(){
 void loop(){
     
     /* Call functions here to execute the functionality of Scorpion. Your job will be to pass in inputs and extract outputs to functions where necessary. You need to call
-    *  about 5-7 functions here
+    *  about 5-7 functions here. 
+    * Figure out the software flow. What's the first function you should call? What starts off every single function? After that the order of functions is up to you!
     */
     
 }
