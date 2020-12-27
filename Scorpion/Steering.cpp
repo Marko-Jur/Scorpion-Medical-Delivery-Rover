@@ -18,7 +18,7 @@ void motorSetup(){
 void steering(int transmitter_values[8]){
   
   /*In this function you need to do 3 things
-  * 1) Figure out which channels you need from the transmitter = Transmitter_values[2],[3],[4] -> Throttle, lateral and reverse.
+  * 1) Figure out which channels you need from the transmitter = Transmitter_values[0],[2],[4] -> Throttle, lateral and reverse.
     2) Map throttle from 0-1000 to 50 - 250
     3) Map lateral from 0-1000 to -STEERING_RESOLUTION, STEERING RESOLUTION
     4) Consider the reverse switch on transmitter_values[4], if the value > DIRECTION, then the motors should go forward, if the value < DIRECTION then go reverse
