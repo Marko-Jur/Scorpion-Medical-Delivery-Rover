@@ -9,6 +9,7 @@ void setupRc(){
   
 }
 
+//Add in Function Description Here
 void readRc(int rc_values[8]){
  //Read values from the transmitter and  store them accordingly into the array
   //[0] - Right Lateral, 
