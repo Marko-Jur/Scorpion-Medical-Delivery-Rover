@@ -7,6 +7,8 @@
 const float STEERING_RESOLUTION = 25;
 const int DIRECTION = 500;
 
+int transmitter_values[8] = {0,0,0,0,0,0,0,0}; // Values from the transmitters: Right Lateral, Right up/down, Thottle, Left lateral, switch A, switch B, Switch C, Switch D
+
 //Add Function Description here
 void motorSetup(){
   
