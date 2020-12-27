@@ -6,6 +6,8 @@
 #include "Fpv.h"
 #include "Lasers.h"
 
+int raw_rc_values[8] = {0,0,0,0,0,0,0,0}; // This is the array you need to pass into the readRc function.
+
 //Add in Function Description Here
 void setup(){
 
