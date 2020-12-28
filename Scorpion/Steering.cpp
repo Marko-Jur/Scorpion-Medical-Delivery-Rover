@@ -12,7 +12,7 @@ int transmitter_values[8] = {0,0,0,0,0,0,0,0}; // Values from the transmitters: 
 //Add Function Description here
 void motorSetup(){
   
-  //Setup the motor pins in the forward direction initially
+  //Setup the motor pins in the forward direction initial
   
 }
 
