@@ -2,6 +2,7 @@
 
 #include "Pin_Assignments.h"
 #include "Scorpion_Libraries.h"
+#include "Grab.h"
 
 //Declare servo and linear actuator objects, you might need to use the Sevro.h library here. If you do it must go into the Scorpion_Libraries.h file, not here.
 
