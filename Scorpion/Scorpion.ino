@@ -14,6 +14,7 @@ void setup(){
     Serial.begin(9600);
     
     //Setup all the components here. You should call about 3-5 functions here
+    void setupRc();
     
     
 
