@@ -6,6 +6,8 @@
 //Add function description here
 void setuplasers(){
   
+  //Do stuff
+  
 }
 
 //Add function description here
