@@ -4,10 +4,14 @@
 #include "Scorpion_Libraries.h"
 
 int rc_values[8] = {0,0,0,0,0,0,0,0};
+int x[15],ch1[15],i;
 
 //Add in Function Description Here
 void setupRc(){
   //Setup RC pins here
+  Serial.begin(9600);
+  pinMode(2,INPUT_PULLUP):
+  attachInterrupt(digitalPinToInterrupt(2),readMe,FALLING);
   
 }
 
@@ -23,5 +27,34 @@ void readRc(int rc_values[8]){
   //[6] - Switch C, 
   //[7] - Switch D
   
+  int i,j,k=0;
+  for(k=14;k>-1;k--){
+    if(ch1[k]>10000){
+      j=k;
+      delay(1);
+  }
+    for(i=0;i<=7;i++){
+      rc_values[i]=(ch1[i+j]);
+      delay(1);
+  
+}}
+  
+void readMe(){
+a=micros();
+  c=a-b;
+  b=a;
+  x[i]=c;
+  i=i+1;
+  
+if(i==15){
+for(int j=0;j<15;j++){
+ch1[j]=x[j];
+  delay(1);
 }
-
+  i=0;
+}}  
+  
+  
+  
+  
+  
