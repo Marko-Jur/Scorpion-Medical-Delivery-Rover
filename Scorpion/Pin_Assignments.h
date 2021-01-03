@@ -21,7 +21,7 @@
 
 //Lasers
 #define LASER_A 
-#define LASER_B
+#define LASER_B 
 
 //FPV
 
