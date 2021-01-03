@@ -20,8 +20,8 @@
 #define RX 2
 
 //Lasers
-#define LASER_A 
-#define LASER_B 
+#define LASER_A 7
+#define LASER_B 9
 
 //FPV
 
