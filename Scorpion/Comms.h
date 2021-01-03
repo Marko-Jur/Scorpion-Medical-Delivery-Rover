@@ -4,10 +4,9 @@
 #define _COMMS_H
 
 void setupRc();
-void manualMotorController(int channel_values[]);
 void read_me();
 void read_rc();
-void rcReader(int channel_values[8]);
+void rcReader(int channel_values[9]);
 
 
 #endif

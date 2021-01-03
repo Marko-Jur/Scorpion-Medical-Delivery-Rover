@@ -12,7 +12,7 @@ void setupGrab(){
 }
 
 //Add in Function Description Here
-void Grab(int transmitter_values[8]){
+void Grab(int SWITCH_B){
  //Make the servos move. Wait for Switch B on transmitter_values[5] to turn HIGH and then the servos should move
   
 }
