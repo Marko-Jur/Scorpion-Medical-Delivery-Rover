@@ -4,7 +4,5 @@
 #define _COMMS_H
 
 void setupRc();
-void readRc(int rc_values[8]);
-void readMe();
 
 #endif
