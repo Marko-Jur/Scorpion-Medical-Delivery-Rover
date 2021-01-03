@@ -8,7 +8,7 @@
 //Defining the Receiver object
 
 //Defining the steering Resolution:
-const int STEERING_RESOLUTION = 20;
+const int STEERING_RESOLUTION = 50;
 
 //Array for values:
 unsigned long int a,b,c;
@@ -140,9 +140,12 @@ void manualMotorController(int channel_values[]){
   mapped_channel_values[0] = map(channel_values[1],1000,2003,-STEERING_RESOLUTION,STEERING_RESOLUTION); //LRight Lateral
 
   //Value written to motors:
+  
   right_motor_value = mapped_channel_values[2] + mapped_channel_values[0];
   left_motor_value = mapped_channel_values[2] - mapped_channel_values[0];
+ 
 
+  
   //Allowing Scorpion to turn in place, if throttle is equal to zero we can still write values to the left and right motrs individually
   if (mapped_channel_values[2] == 0 && mapped_channel_values[0] > 3){ //Put greater than 3 just to make sure it's always 0, the transmitter might slightly shift to read 0 as 1 so put 3 to make sure it doesn't turn when the right stick is at 0
     right_motor_value +=150;

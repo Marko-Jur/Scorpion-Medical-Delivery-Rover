@@ -4,13 +4,13 @@
 #define _PINASSIGNMENTS_H
 
 //Motor Pins:
-#define RIGHT_MOTOR_A 2
-#define RIGHT_MOTOR_B 3
-#define RIGHT_MOTOR_ENABLE 14
+#define RIGHT_MOTOR_A 5
+#define RIGHT_MOTOR_B 12
+#define RIGHT_MOTOR_ENABLE 3
 
-#define LEFT_MOTOR_A 4
-#define LEFT_MOTOR_B 5
-#define LEFT_MOTOR_ENABLE 15
+#define LEFT_MOTOR_A 7
+#define LEFT_MOTOR_B 6
+#define LEFT_MOTOR_ENABLE 11
 
 //Actuators
 #define LINEAR_ACTUATOR 9
