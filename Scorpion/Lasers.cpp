@@ -1,5 +1,6 @@
 //Contains all functions for Scorpion laser
 
+#import <Arduino.h> 
 #include "Pin_Assignments.h"
 #include "Scorpion_Libraries.h"
 #ïnclude "<Pin_Assignment.h"
@@ -8,7 +9,7 @@
 void setuplasers(){
   
   //Do stuff
-  pinMode(//Two parameters); //Look at Blinky example
+  pinMode(//Two parameters); //Look at Blinky example. //DON'T USE A NUMBER FOR THE PIN, USE LASER_A.
   
   
 }
