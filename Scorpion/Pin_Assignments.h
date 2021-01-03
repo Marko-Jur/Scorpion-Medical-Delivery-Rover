@@ -3,22 +3,22 @@
 #ifndef _PINASSIGNMENTS_H    
 #define _PINASSIGNMENTS_H
 
-//Motors
-#define MOTOR_RIGHT_A 7
-#define MOTOR_RIGHT_B  6
-#define MOTOR_RIGHT_ENABLE 11
+//Motor Pins:
+#define RIGHT_MOTOR_A 2
+#define RIGHT_MOTOR_B 3
+#define RIGHT_MOTOR_ENABLE 14
 
-#define MOTOR_LEFT_A 5
-#define MOTOR_LEFT_B 12
-#define MOTOR_LEFT_ENABLE 3
+#define LEFT_MOTOR_A 4
+#define LEFT_MOTOR_B 5
+#define LEFT_MOTOR_ENABLE 15
 
 //Actuators
 #define LINEAR_ACTUATOR 9
 #define SERVO 10
 
 //Receiver
-#define RX 2
-
+#define RCRX 2
+/*
 //Lasers
 #define LASER_A 
 #define LASER_B
@@ -27,6 +27,6 @@
 
 #define FPV_A
 #define FPV_B
-
+*/
 
 #endif

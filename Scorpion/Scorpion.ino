@@ -11,10 +11,11 @@ int raw_rc_values[8] = {0,0,0,0,0,0,0,0}; // This is the array you need to pass 
 //Add in Function Description Here
 void setup(){
 
-    Serial.begin(9600);
-    
-    //Setup all the components here. You should call about 3-5 functions here
-    void setupRc();
+  //Start the serial monitor
+  Serial.begin(9600);
+
+  //Setup your motor directions and the Receiver
+  setupRc();
     
     
 
@@ -22,10 +23,11 @@ void setup(){
 
 //Add in Function Description Here
 void loop(){
-    
-    /* Call functions here to execute the functionality of Scorpion. Your job will be to pass in inputs and extract outputs to functions where necessary. You need to call
-    *  about 5-7 functions here. 
-    * Figure out the software flow. What's the first function you should call? What starts off every single function? After that the order of functions is up to you!
-    */
+
+  //Find the values in the receiver, and write them into the raw rc values array:
+  rcReader(raw_rc_values);
+
+  //Send these values to the motors
+  manualMotorController(raw_rc_values);
     
 }

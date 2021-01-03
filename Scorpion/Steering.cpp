@@ -27,5 +27,5 @@ void steering(int transmitter_values[8]){
     5) Create an algorithm that outputs the values to the motors. If you need help check out my manual drive code here: https://github.com/Marko-Jur/Wall-E-Autonomous-Rover/blob/main/Manual_Mode/Manual_Mode.cpp
     6) Scorpion should be able to turn on the spot, eg have just one motor spinning at a time. I do this in my code if you need it.
     7) Make sure you don't write values less than 0 or greater than 250 to the motors.
-  
+  */
 }
