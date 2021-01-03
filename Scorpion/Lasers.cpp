@@ -5,6 +5,13 @@
 #include "Scorpion_Libraries.h"
 #ïnclude "<Pin_Assignment.h"
 
+//Function declarations:
+/*
+void setupLasers();
+void laserControl(int SWITCH_B);
+*/
+
+
 //Add function description here
 void setuplasers(){
   
@@ -15,7 +22,7 @@ void setuplasers(){
 }
 
 //Add function description here
-void laserControl(SWITCH_B){
+void laserControl(int SWITCH_B){
   
   //If SWITCH_B is >1500 switch on the Laser.
   //Figure out how to switch on the laser, and switch it off. In Blinky, they switch on the LED, and switch it off.
