@@ -16,23 +16,22 @@ void laserControl(int SWITCH_B);
 void setuplasers(){
   
   //Do stuff
-  pinMode(//Two parameters); //Look at Blinky example. //DON'T USE A NUMBER FOR THE PIN, USE LASER_A.
-  
+  pinMode(LASER_A, OUTPUT); //Look at Blinky example. //DON'T USE A NUMBER FOR THE PIN, USE LASER_A.
+  pinMode(LASER_B, OUTPUT);
   
 }
 
 //Add function description here
 void laserControl(int SWITCH_B){
   
-  //If SWITCH_B is >1500 switch on the Laser.
-  //Figure out how to switch on the laser, and switch it off. In Blinky, they switch on the LED, and switch it off.
-  //(One line)
+  if (SWITCH_B > 1500){
+    digitalWrite(LASER_A, HIGH);
+    digitalWrite(LASER_B, HIGH);
+  }
+  else{
+    digitalWrite(LASER_A, LOW);
+    digitalWrite(LASER_B, LOW);
+  }
   
-  //else
-  //Switch it off
-  //(One line)
   
 }
-
-
-
