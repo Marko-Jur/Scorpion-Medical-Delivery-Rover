@@ -5,8 +5,9 @@
 #include "Comms.h"
 #include "Fpv.h"
 #include "Lasers.h"
+#include "Steering.h"
 
-int raw_rc_values[8] = {0,0,0,0,0,0,0,0}; // This is the array you need to pass into the readRc function.
+int raw_rc_values[9] = {0,0,0,0,0,0,0,0,0}; // This is the array you need to pass into the readRc function.
 
 //Add in Function Description Here
 void setup(){
@@ -14,8 +15,14 @@ void setup(){
   //Start the serial monitor
   Serial.begin(9600);
 
-  //Setup your motor directions and the Receiver
+  //Setup the Receiver
   setupRc();
+
+  //Setup the motor directions
+  motorSetup();
+
+  //Setup the servos
+  setupGrab();
     
     
 
@@ -25,9 +32,16 @@ void setup(){
 void loop(){
 
   //Find the values in the receiver, and write them into the raw rc values array:
-  rcReader(raw_rc_values);
+    rcReader(raw_rc_values);
 
   //Send these values to the motors
-  manualMotorController(raw_rc_values);
+   steering(raw_rc_values);
+
+  //Call Grab and pass in Switch B, a high Switch B initiates a Grab.
+    Grab(raw_rc_values[4]);
+
+  //Call FPV and pass in Switch C, a high Switch C turns on the FPV
+  //fpvControl(raw_rc_values[8]);
+  
     
 }

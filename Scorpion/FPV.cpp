@@ -9,7 +9,7 @@ void setupFpv(){
 }
 
 //Add in function description here
-void fpvControl(int SWITCH_B){
+void fpvControl(int SWITCH_C){
   
   
   
