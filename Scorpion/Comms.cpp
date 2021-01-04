@@ -2,6 +2,7 @@
 
 #include "Pin_Assignments.h"
 #include "Scorpion_Libraries.h"
+#import<Arduino.h>
 
 int rc_values[8] = {0,0,0,0,0,0,0,0};
 int x[15],ch1[15],i;
