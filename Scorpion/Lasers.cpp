@@ -1,29 +1,21 @@
 //Contains all functions for Scorpion laser
 
 #import <Arduino.h> 
-#include "Pin_Assignments.h"
-#include "Scorpion_Libraries.h"
-#ïnclude "Lasers.h"
-
-//Function declarations:
-/*
-void setupLasers();
-void laserControl(int SWITCH_B);
-*/
+#include <Pin_Assignments.h>
+#include <Scorpion_Libraries.h>
+#include <Lasers.h>
 
 
-//Add function description here
-void setuplasers(){
-  
-  //Do stuff
-  pinMode(LASER_A, OUTPUT); //Look at Blinky example. //DON'T USE A NUMBER FOR THE PIN, USE LASER_A.
+//Set up pin locations for 2 lasers
+void setupLasers(){
+  pinMode(LASER_A, OUTPUT);
   pinMode(LASER_B, OUTPUT);
-  
 }
 
-//Add function description here
-void laserControl(int SWITCH_B){
+//Switching 2 lasers ON/OFF simultaneously with input from transmitter
+void loop() {
   
+void laserControl(int SWITCH_B){
   if (SWITCH_B > 1500){
     digitalWrite(LASER_A, HIGH);
     digitalWrite(LASER_B, HIGH);
@@ -31,7 +23,5 @@ void laserControl(int SWITCH_B){
   else{
     digitalWrite(LASER_A, LOW);
     digitalWrite(LASER_B, LOW);
-  }
-  
-  
+  }  
 }
