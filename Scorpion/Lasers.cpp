@@ -15,8 +15,8 @@ void setupLasers(){
 //Switching 2 lasers ON/OFF simultaneously with input from transmitter
 void loop() {
   
-void laserControl(int SWITCH_B){
-  if (SWITCH_B > 1500){
+void laserControl(int SWITCH_D){
+  if (SWITCH_D > 1500){
     digitalWrite(LASER_A, HIGH);
     digitalWrite(LASER_B, HIGH);
   }
