@@ -12,9 +12,8 @@ void setupLasers(){
   pinMode(LASER_B, OUTPUT);
 }
 
-//Switching 2 lasers ON/OFF simultaneously with input from transmitter
-void loop() {
-  
+//Switching 2 lasers ON/OFF simultaneously with input from transmitter  
+
 void laserControl(int SWITCH_D){
   if (SWITCH_D > 1500){
     digitalWrite(LASER_A, HIGH);
@@ -24,4 +23,4 @@ void laserControl(int SWITCH_D){
     digitalWrite(LASER_A, LOW);
     digitalWrite(LASER_B, LOW);
   }  
-}
+
