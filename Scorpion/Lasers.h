@@ -5,6 +5,6 @@
 
 //Function declarations
 void setupLasers();
-void laserControl(int SWITCH_B);
+void laserControl(int SWITCH_D);
 
 #endif
