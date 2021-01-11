@@ -1,4 +1,3 @@
-
 //Steering functions
 #import <Arduino.h> 
 #include "Pin_Assignments.h"
@@ -57,6 +56,23 @@ void motorSetup(){
  * 
  */
 void steering(int channel_values[8]){
+
+  //If Switch A is on then change the motor direction
+  if (channel_values[2] > 1500){
+      digitalWrite(RIGHT_MOTOR_A,LOW);
+      digitalWrite(RIGHT_MOTOR_B,HIGH);
+
+      digitalWrite(LEFT_MOTOR_A,LOW);
+      digitalWrite(LEFT_MOTOR_B,HIGH);
+  }
+
+  else{
+      digitalWrite(RIGHT_MOTOR_A,HIGH);
+      digitalWrite(RIGHT_MOTOR_B,LOW);
+
+      digitalWrite(LEFT_MOTOR_A,HIGH);
+      digitalWrite(LEFT_MOTOR_B,LOW);
+  }
   
   //Mapping Channel Values
   mapped_channel_values[2] = map(channel_values[0],1000,2003,0,250); //Throttle
@@ -102,7 +118,14 @@ void steering(int channel_values[8]){
 
 //Uncomment to get the values
 
-  
+  /*
   Serial.print(right_motor_value);Serial.print("\t");
   Serial.print(left_motor_value);Serial.print("\n");
+  */
+
+
+
+
+
+  
 }

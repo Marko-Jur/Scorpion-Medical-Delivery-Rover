@@ -20,25 +20,30 @@ void setup(){
 
   //Setup the motor directions
   motorSetup();
-    
-    
 
+  //Setup the servos
+  setupGrab();
+
+  setupLaser();
 }
 
 //Add in Function Description Here
 void loop(){
 
   //Find the values in the receiver, and write them into the raw rc values array:
-  rcReader(raw_rc_values);
+    rcReader(raw_rc_values);
 
   //Send these values to the motors
-  steering(raw_rc_values);
+    steering(raw_rc_values);
 
   //Call Grab and pass in Switch B, a high Switch B initiates a Grab.
-  Grab(raw_rc_values[7]);
+    Grab(raw_rc_values[4]);
 
   //Call FPV and pass in Switch C, a high Switch C turns on the FPV
-  fpvControl(raw_rc_values[8]);
+  //fpvControl(raw_rc_values[8]);
+  laserControl(raw_rc_values[3]);
+
+  
   
     
 }

@@ -18,15 +18,15 @@
 
 //Receiver
 #define RCRX 2
-/*
+
 //Lasers
-#define LASER_A 
+#define LASER_A 8
 #define LASER_B
 
 //FPV
 
 #define FPV_A
 #define FPV_B
-*/
+
 
 #endif

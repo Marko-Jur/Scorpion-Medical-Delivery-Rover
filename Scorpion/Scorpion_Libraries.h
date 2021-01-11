@@ -3,5 +3,6 @@
 #ifndef _LIBRARIES_H    
 #define _LIBRARIES_H
 
+#include <Servo.h>
 
 #endif
