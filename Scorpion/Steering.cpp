@@ -1,5 +1,6 @@
 //Steering functions
 
+#include "Arduino.h"
 #include "Pin_Assignments.h"
 #include "Scorpion_Libraries.h"
 
