@@ -1,11 +1,10 @@
 //Steering functions
 
-#include "Arduino.h"
 #include "Pin_Assignments.h"
 #include "Scorpion_Libraries.h"
 
 //This is half the maximum difference between the two motor speeds (one will be -25, the other +25)
-const float STEERING_RESOLUTION = 25;
+const float STEERING_RESOLUTION = 50;
 const int DIRECTION = 500;
 const int TURNING_SENSITIVITY = 3;
 
@@ -18,7 +17,6 @@ int transmitter_values[8] = { 0,0,0,0,0,0,0,0 }; // Values from the transmitters
 *  Output Parameters: None
 *  Purpose: Intialize motor pins
 */
-
 void motorSetup() {
 
 	//Setup the motor pins in the forward direction initial
@@ -37,12 +35,12 @@ void motorSetup() {
 	digitalWrite(MOTOR_LEFT_B, LOW);
 }
 
+
 /* Function: steering
 *  Input Parameters: Transmitter values as an array of integers
 *  Output Parameters: None
 *  Purpose: Use transmitter values to send data motor driver and control steering
 */
-
 void steering(int transmitter_values[8]) {
 	int left_motor_speed = 0;
 	int right_motor_speed = 0;
@@ -53,7 +51,7 @@ void steering(int transmitter_values[8]) {
 	// Map throttle 0-1000 to 50 - 250
 	mapped_values[0] = map(transmitter_values[0], 0, 1000, 50, 250);
 
-	//Map lateral from 0-1000 to -STEERING_RESOLUTION, STEERING RESOLUTION
+	// Map lateral from 0-1000 to -STEERING_RESOLUTION, STEERING RESOLUTION
 	mapped_values[2] = map(transmitter_values[2], 0, 1000, -STEERING_RESOLUTION, STEERING_RESOLUTION);
 
 	right_motor_speed = mapped_values[2] + mapped_values[0];
@@ -62,7 +60,7 @@ void steering(int transmitter_values[8]) {
 
 	if (transmitter_values[4] > DIRECTION) { // go forward direction
 
-		//right motor
+	//right motor
 		digitalWrite(MOTOR_RIGHT_A, HIGH);
 		digitalWrite(MOTOR_RIGHT_B, LOW);
 
@@ -82,7 +80,32 @@ void steering(int transmitter_values[8]) {
 		digitalWrite(MOTOR_LEFT_B, HIGH);
 	}
 
+	if (mapped_values[2] == 0 && mapped_values[0] > TURNING_SENSITIVITY)//turn right without moving forward
+	{
+		//right motor forward
+		digitalWrite(MOTOR_RIGHT_A, LOW);
+		digitalWrite(MOTOR_RIGHT_B, HIGH);
+		right_motor_speed += 150;
 
+		//left motor reverse
+		digitalWrite(MOTOR_LEFT_A, HIGH);
+		digitalWrite(MOTOR_LEFT_B, LOW);
+		left_motor_speed += 150;
+	}
+	else if (mapped_values[2] == 0 && mapped_values[0] > -TURNING_SENSITIVITY) { //turn left without moving forward
+
+		//right motor forward
+		digitalWrite(MOTOR_RIGHT_A, HIGH);
+		digitalWrite(MOTOR_RIGHT_B, LOW);
+		right_motor_speed += 150;
+		
+		//left motor reverse
+		digitalWrite(MOTOR_LEFT_A, LOW);
+		digitalWrite(MOTOR_LEFT_B, HIGH);
+		left_motor_speed += 150;
+
+
+	}
 
 	if(mapped_values[2] == 0 && mapped_values[0] > TURNING_SENSITIVITY)//turn right without moving forward
 	{
