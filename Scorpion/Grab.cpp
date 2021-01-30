@@ -53,6 +53,7 @@ void Grab(int transmitter_values[8]) {
 	if (grab_switch > MIDDLE_POS_MAX) { //switch fully on position
 
 		linear_actuator.writeMicroseconds(LINEAR_MIN);
+		delay(DELAY);
 		servo.write(SERVO_MAX);
 
 
@@ -61,6 +62,7 @@ void Grab(int transmitter_values[8]) {
 	else if (grab_switch > MIDDLE_POS_MIN && grab_switch < MIDDLE_POS_MAX) { // switch in middle position
 		
 		linear_actuator.writeMicroseconds(LINEAR_GRAB);
+		delay(DELAY);
 		servo.write(SERVO_MAX);
 		
 	}
@@ -68,6 +70,7 @@ void Grab(int transmitter_values[8]) {
 	else { // switch in off position
 
 		servo.write(SERVO_MIN);
+		delay(DELAY);
 		linear_actuator.writeMicroseconds(LINEAR_MAX);
 	}
 
