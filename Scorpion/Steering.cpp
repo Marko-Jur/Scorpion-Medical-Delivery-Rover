@@ -7,6 +7,7 @@
 const float STEERING_RESOLUTION = 50;
 const int DIRECTION = 500;
 const int TURNING_SENSITIVITY = 3;
+const int MOTOR_OFFSET = 10; //Change after testing
 
 int transmitter_values[8] = { 0,0,0,0,0,0,0,0 }; // Values from the transmitters: Right Lateral, Right up/down, Thottle, Left lateral, switch A, switch B, Switch C, Switch D
 
@@ -54,8 +55,8 @@ void steering(int transmitter_values[8]) {
 	// Map lateral from 0-1000 to -STEERING_RESOLUTION, STEERING RESOLUTION
 	mapped_values[2] = map(transmitter_values[2], 0, 1000, -STEERING_RESOLUTION, STEERING_RESOLUTION);
 
-	right_motor_speed = mapped_values[2] + mapped_values[0];
-	left_motor_speed = mapped_values[2] - mapped_values[0];
+	right_motor_speed = mapped_values[2] + mapped_values[0] + MOTOR_OFFSET;
+	left_motor_speed = mapped_values[2] - mapped_values[0] - MOTOR_OFFSET;
 
 
 	if (transmitter_values[4] > DIRECTION) { // go forward direction
