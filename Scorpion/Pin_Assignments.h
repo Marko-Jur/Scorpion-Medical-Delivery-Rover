@@ -9,10 +9,11 @@
 #define RIGHT_MOTOR_ENABLE 3
 
 #define LEFT_MOTOR_A 7
-#define LEFT_MOTOR_B 6
+#define LEFT_MOTOR_B 4
 #define LEFT_MOTOR_ENABLE 11
 
 //Actuators
+#define CAM_SERVO 6
 #define LINEAR_ACTUATOR 9
 #define SERVO 10
 
